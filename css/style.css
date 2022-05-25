@@ -122,8 +122,63 @@ body{
 .half-content .right li{
     margin-bottom: 22px;
 }
-/* Section video */
-
+/* Section slide */
+.sliders{
+    position: relative;
+    top: 60px;
+    width: 100%;
+    height: 100vh;
+}
+.slide{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+.slider .current{
+    opacity: 1;
+}
+.slide .content{
+    position: absolute;
+    bottom: 100px;
+    left: -600px;
+    opacity: 0;
+    background: rgba(255,255, 255,0.8);
+    color: #333;
+    padding: 35px;
+    margin-left: 50px;
+}
+.slide .content h4{
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+.slide.current .content{
+    opacity: 1;
+    transform: translateX(600px);
+    transition: all 0.7s ease-in-out 0.3s;
+}
+.buttons button#next{
+    position: absolute;
+    top: 50%;
+    right: 15px;
+}
+.buttons button#prev{
+    position: absolute;
+    top: 50%;
+    left: 15px;
+}
+.buttons button{
+    cursor: pointer;
+    border: 2px solid #333;
+    background-color: transparent;
+    color: #333;
+    padding: 13px 15px;
+    border-radius: 50%;
+    outline: none;
+}
 
 @media (max-width: 960px) {
     nav.main-nav{
@@ -135,4 +190,16 @@ body{
     #main-header{
         text-align: center;
     }
+}
+.slide:nth-child(1){
+    background: url('../img/no-caddie.jpg') no-repeat center center/cover;
+}
+.slide:nth-child(2){
+    background: url('../img/no-cash.jpg') no-repeat center center/cover;
+}
+.slide:nth-child(3){
+    background: url('../img/reasonable.jpg') no-repeat center center/cover;
+}
+.slide:nth-child(4){
+    background: url('../img/flexible.jpg') no-repeat center center/cover;
 }
